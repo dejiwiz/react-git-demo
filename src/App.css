@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
   padding: 50px;
 }
@@ -42,4 +42,166 @@ h1 {
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
 }
+
+input {
+  padding: 10px;
+  font-size: 14px;
+  margin: 10px;
+  width: 200px;
+}
+
+button {
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: #f4f4f4;
+  padding: 10px;
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Remove strike-through effect */
+li.completed {
+  background: #d3ffd3; /* Keep green background to indicate completion */
+}
+
+span {
+  cursor: pointer;
+}
+
+/* Task Name Styling with added margin */
+.task-name {
+  font-weight: bold;
+  margin-left: 5px; /* Increased margin-left to add more space between toggle and text */
+  text-align: left;
+  flex-grow: 1;
+}
+
+/* Completed / Not Completed Text Styling */
+.status {
+  font-style: italic;
+  margin-left: 10px;
+  margin-right: 15px; /* Add margin-right for space between status and delete button */
+}
+
+.status.completed {
+  color: green;
+}
+
+.status.not-completed {
+  color: red;
+}
+
+/* Slider Toggle styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+  margin-right: 15px; /* Add margin to space it from task name */
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+/* Header Styles */
+header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #eee;
+}
+
+header div {
+  flex-grow: 1;
+  text-align: center;
+}
+
+header .action {
+  text-align: center;
+}
+
+/* For smaller screens, stack items vertically */
+@media (max-width: 768px) {
+  li {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center-align text for mobile */
+  }
+
+  .task-name {
+    margin-left: 0;
+  }
+
+  .status-container {
+    display: flex;
+    flex-direction: column; /* Stack status and delete button vertically */
+  }
+
+  .status {
+    margin-left: 0;
+    margin-top: 5px; /* Space between status and delete button */
+  }
+
+  button {
+    margin-top: 5px; /* Space between status and delete button */
+  }
+}
+
+
+
